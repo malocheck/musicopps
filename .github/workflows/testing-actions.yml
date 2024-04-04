@@ -14,27 +14,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Is allowed branch for develop
-        if: ${{ github.ref == 'refs/heads/develop' }}
-        run: |
-          BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}")
-          echo $BRANCH_NAME
-          if [[ $BRANCH_NAME =~ ^(feature|hotfix|fix)\/ ]]; then
-            echo "Branch name starts with supported prefix"
-            exit 0
-          else
-            echo "Branch name doesn't start with supported prefix"
-            exit 1 # Stop the action
-          fi
-      - name: Is allowed branch for master
-        if: ${{ github.ref == 'refs/heads/master' }}
-        run: |
-          BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}")
-          echo $BRANCH_NAME
-          if [[ $BRANCH_NAME =~ ^(develop|hotfix)\/ ]]; then
-            echo "Branch name starts with supported prefix"
-            exit
-          else
-            echo "Branch name doesn't start with supported prefix"
-            exit 1 # Stop the action
-          fi
+      - name: Starting
+        run: echo ${{github.ref}}

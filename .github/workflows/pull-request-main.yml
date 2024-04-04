@@ -5,8 +5,9 @@ on:
     branches:
       - main
 
-second-job:
-  runs-on: ubuntu-latest
+jobs:
+  second-job:
+    runs-on: ubuntu-latest
 
   steps:
     - name: Checkout

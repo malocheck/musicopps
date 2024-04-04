@@ -17,7 +17,7 @@ jobs:
         run: |
           BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}")
           echo $BRANCH_NAME
-          if [[ "$BRANCH_NAME" =~ ^(feature|hotfix|fix)\/ ]]; then
+          if [[ "$BRANCH_NAME" =~ ^(feature|hotfix|fix)\/([A-Z]{2,}-\d+) ]]; then
             echo "Branch name starts with supported prefix"
           else
             echo "Branch name doesn't start with supported prefix"

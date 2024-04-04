@@ -2,8 +2,7 @@ name: Simple GitHub Action
 
 on:
   push:
-    branches:
-      - feature/HH-987
+    - "*"
 
 jobs:
   first-job:

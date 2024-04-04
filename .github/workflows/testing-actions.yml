@@ -26,7 +26,6 @@ jobs:
             echo "Branch name doesn't start with supported prefix"
             exit 1 # Stop the action
           fi
-
       - name: Is allowed branch for master
         if: ${{ github.ref == 'refs/heads/master' }}
         run: |
@@ -39,7 +38,6 @@ jobs:
             echo "Branch name doesn't start with supported prefix"
             exit 1 # Stop the action
           fi
-          
       - name: Run for other branches
         if: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/develop' }}
         run: |

@@ -21,3 +21,4 @@ jobs:
           else
             echo "Branch name doesn't start with supported prefix"
             exit 1 # Stop the action
+          fi

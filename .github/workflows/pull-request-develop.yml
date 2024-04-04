@@ -1,0 +1,26 @@
+name: Simple GitHub Action
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Is allowed branch for develop
+        run: |
+          BRANCH_NAME=$(echo ${{ github.head_ref }})
+          echo $BRANCH_NAME
+          if [[ $BRANCH_NAME =~ ^(feature|hotfix|fix)\/ ]]; then
+            echo "Branch name starts with supported prefix"
+            exit 0
+          else
+            echo "Branch name doesn't start with supported prefix"
+            exit 1 # Stop the action
+          fi

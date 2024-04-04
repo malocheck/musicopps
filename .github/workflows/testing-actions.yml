@@ -15,7 +15,9 @@ jobs:
 
       - name: Log branch name
         run: |
-          if [ ${{ github.head_ref }} != "dev" ]; then
+          BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}")
+          echo $BRANCH_NAME
+          if [ "$BRANCH_NAME" != "dev" ]; then
             echo "Branch name starts with supported prefix"
           else
             echo "Branch name doesn't start with supported prefix"

@@ -3,7 +3,7 @@ name: Simple GitHub Action
 on:
   push:
     branches:
-      - "*"
+      - feature/HH-987-test-branch
 
 jobs:
   first-job:

@@ -38,9 +38,3 @@ jobs:
             echo "Branch name doesn't start with supported prefix"
             exit 1 # Stop the action
           fi
-      - name: Run for other branches
-        if: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/develop' }}
-        run: |
-            echo "This is a branch other than main or develop. Running default steps."
-            exit 1
-          fi

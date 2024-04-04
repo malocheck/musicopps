@@ -15,7 +15,7 @@ jobs:
 
       - name: Is allowed branch for develop
         run: |
-          BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}")
+          BRANCH_NAME=$(echo ${{ github.head_ref }})
           echo $BRANCH_NAME
           if [[ $BRANCH_NAME =~ ^(feature|hotfix|fix)\/ ]]; then
             echo "Branch name starts with supported prefix"

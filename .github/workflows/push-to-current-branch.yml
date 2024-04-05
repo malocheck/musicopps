@@ -1,23 +1,22 @@
-name: Is allowed branch for develop?
+name: Is allowed branch for push?
 
 on:
-  pull_request:
-    branches:
+  push:
+    branches-ignore:
       - develop
-    types:
-      - opened
+      - main
 
 jobs:
-  is-pr-allowed-to-develop:
+  check-branch-name:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Is allowed branch for develop
+      - name: Is allowed branch name
         run: |
-          BRANCH_NAME=$(echo ${{ github.head_ref }})
+          BRANCH_NAME=$(echo ${{ github.ref_name }})
           echo $BRANCH_NAME
           if [[ $BRANCH_NAME =~ ^(feature|hotfix|fix)\/ ]]; then
             echo "Branch name starts with supported prefix"

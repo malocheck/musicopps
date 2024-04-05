@@ -1,11 +1,6 @@
 name: Is allowed branch for master?
 
-on:
-  pull_request:
-    branches:
-      - develop
-    types:
-      - opened
+on: [push]
 
 jobs:
   first-job:
@@ -17,7 +12,7 @@ jobs:
 
       - name: Is allowed branch for develop
         run: |
-          BRANCH_NAME=$(echo ${{ github.head_ref }})
+          BRANCH_NAME=$(echo ${{ github.ref_name }})
           echo $BRANCH_NAME
           if [[ $BRANCH_NAME =~ ^(feature|hotfix|fix)\/ ]]; then
             echo "Branch name starts with supported prefix"

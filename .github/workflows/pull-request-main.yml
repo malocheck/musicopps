@@ -1,12 +1,14 @@
-name: Simple GitHub Action
+name: Is allowed branch for master?
 
 on:
   pull_request:
     branches:
       - main
+    types:
+      - opened
 
 jobs:
-  second-job:
+  is-pr-allowed-to-main:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,8 +21,8 @@ jobs:
           echo $BRANCH_NAME
           if [[ $BRANCH_NAME =~ ^(develop|hotfix)\/ ]]; then
             echo "Branch name starts with supported prefix"
-            exit
+            exit 0
           else
-            echo "Branch name doesn't start with supported prefix"
+            echo "Branch name doesn't start with supported prefix develop or hotfix."
             exit 1 # Stop the action
           fi

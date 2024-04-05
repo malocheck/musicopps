@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  first-job:
+  check-branch-name:
     runs-on: ubuntu-latest
 
     steps:

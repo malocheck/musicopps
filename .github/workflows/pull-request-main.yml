@@ -8,7 +8,7 @@ on:
       - opened
 
 jobs:
-  second-job:
+  is-pr-allowed-to-main:
     runs-on: ubuntu-latest
 
     steps:

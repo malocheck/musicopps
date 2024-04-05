@@ -8,7 +8,7 @@ on:
       - opened
 
 jobs:
-  first-job:
+  is-pr-allowed-to-develop:
     runs-on: ubuntu-latest
 
     steps:

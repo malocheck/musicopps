@@ -1,4 +1,4 @@
-name: Is allowed branch for master?
+name: Is allowed branch for push?
 
 on:
   push:

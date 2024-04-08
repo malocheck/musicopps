@@ -1,0 +1,20 @@
+name: Danger
+
+on:
+  push:
+    branches-ignore:
+      - develop
+      - main
+
+jobs:
+  is-pr-allowed-to-develop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Danger
+        run: npx danger ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

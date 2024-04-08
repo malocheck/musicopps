@@ -1,10 +1,6 @@
 name: Danger
 
-on:
-  pull_request:
-    branches-ignore:
-      - develop
-      - main
+on: pull_request
 
 jobs:
   is-pr-allowed-to-develop:

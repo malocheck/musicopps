@@ -11,4 +11,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Danger
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+        run: npx danger ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

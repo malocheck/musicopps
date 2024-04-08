@@ -1,11 +1,8 @@
-import {message, danger} from "danger"
+import {message, danger, fail} from "danger"
 
 const modifiedMD = danger.git.modified_files.join("- ")
 message("Changed Files in this PR: \n - " + modifiedMD)
 
-if(!danger.github.pr.assignee) {
-    const method = danger.github.pr.base.ref
-    const head = danger.github.pr.head
-    message("This is method: \n - " + method)
-    message("This is head: \n - " + head)
+if (danger.github.pr.body && danger.github.pr.body.length < 10) {
+    fail("This pull request needs a description")
 }

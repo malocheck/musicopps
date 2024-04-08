@@ -1,7 +1,7 @@
 name: Danger
 
 on:
-  push:
+  pull-request:
     branches-ignore:
       - develop
       - main

@@ -3,7 +3,7 @@ name: Danger
 on: [pull_request]
 
 jobs:
-  is-pr-allowed-to-develop:
+  run-danger-checks:
     runs-on: ubuntu-latest
 
     steps:

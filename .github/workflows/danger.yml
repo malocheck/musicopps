@@ -1,8 +1,6 @@
 name: Danger
 
-on:
-  pull_request_target:
-    types: [assigned, opened, edited]
+on: pull_request
 
 jobs:
   is-pr-allowed-to-develop:

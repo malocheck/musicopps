@@ -5,7 +5,7 @@ const targetBranch = danger.github.pr.base.ref
 message("TARGET" + targetBranch)
 
 //test branch
-const testBranch = danger.git.base
+const testBranch = danger.git.head
 message("CAUKO" + " " + testBranch)
 
 //Name of base branch

@@ -20,7 +20,7 @@
     "url": "https://github.com/malocheck/musicopps/issues"
   },
   "homepage": "https://github.com/malocheck/musicopps#readme",
-  "dependencies": {
+  "devDependencies": {
     "danger": "^11.3.1"
   }
 }

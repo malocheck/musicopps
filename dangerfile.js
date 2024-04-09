@@ -4,6 +4,10 @@ import {message, danger, fail} from "danger"
 const targetBranch = danger.github.pr.base.ref
 message("TARGET" + targetBranch)
 
+//test branch
+const testBranch = danger.git.branch
+message("CAUKO" + " " + testBranch)
+
 //Name of base branch
 const baseBranch = danger.github.pr.head.ref
 message("BASE" + baseBranch)

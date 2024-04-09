@@ -1,0 +1,26 @@
+{
+  "name": "musicopps",
+  "version": "1.0.0",
+  "description": "This is test repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"nothing now\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malocheck/musicopps.git"
+  },
+  "keywords": [
+    "testing",
+    "repo"
+  ],
+  "author": "malocheck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malocheck/musicopps/issues"
+  },
+  "homepage": "https://github.com/malocheck/musicopps#readme",
+  "devDependencies": {
+    "danger": "^11.3.1"
+  }
+}
